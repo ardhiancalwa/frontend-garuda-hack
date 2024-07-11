@@ -31,5 +31,30 @@ class Nav {
       page: () => const HomeScreen(),
       binding: HomeControllerBinding(),
     ),
+    GetPage(
+      name: Routes.SPLASHSCREEN,
+      page: () => const SplashscreenScreen(),
+      binding: SplashscreenControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.SIGNUP,
+      page: () => const SignupScreen(),
+      binding: SignupControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.SIGNIN,
+      page: () => const SigninScreen(),
+      binding: SigninControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.PROFILING_ONE,
+      page: () => const ProfilingOneScreen(),
+      binding: ProfilingOneControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.PROFILING_TWO,
+      page: () => const ProfilingTwoScreen(),
+      binding: ProfilingTwoControllerBinding(),
+    ),
   ];
 }

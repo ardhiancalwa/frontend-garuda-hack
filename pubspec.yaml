@@ -10,6 +10,8 @@ dependencies:
   get: 4.6.6
   flutter: 
     sdk: flutter
+  flutter_svg: ^2.0.10+1
+  google_fonts: ^6.2.1
 
 dev_dependencies: 
   flutter_lints: ^3.0.0
@@ -18,4 +20,16 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
-
+  assets: 
+    - assets/images/
+    - assets/icons/
+  fonts: 
+    - family: Gilroy
+      fonts:
+        - asset: assets/fonts/Gilroy-Regular.ttf
+        - asset: assets/fonts/Gilroy-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Gilroy-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Gilroy-Bold.ttf
+          weight: 700

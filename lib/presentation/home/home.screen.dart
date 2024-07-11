@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/infrastructure/theme/colors.dart';
 
 import 'package:get/get.dart';
 
@@ -13,10 +14,11 @@ class HomeScreen extends GetView<HomeController> {
         title: const Text('HomeScreen'),
         centerTitle: true,
       ),
-      body: const Center(
+      body: Center(
         child: Text(
           'HomeScreen is working',
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(
+              fontSize: 20, fontFamily: 'Gilroy', color: primaryColor),
         ),
       ),
     );
