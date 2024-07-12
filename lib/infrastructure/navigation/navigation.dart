@@ -71,5 +71,25 @@ class Nav {
       page: () => const ProsesApplyScreen(),
       binding: ProsesApplyControllerBinding(),
     ),
+    GetPage(
+      name: Routes.PROJECT,
+      page: () => const ProjectScreen(),
+      binding: ProjectControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.FAVORITE,
+      page: () => const FavoriteScreen(),
+      binding: FavoriteControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.PROFILE,
+      page: () => const ProfileScreen(),
+      binding: ProfileControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.NOTIFICATION,
+      page: () => const NotificationScreen(),
+      binding: NotificationControllerBinding(),
+    ),
   ];
 }

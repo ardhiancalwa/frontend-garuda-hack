@@ -38,6 +38,13 @@ class TextStyles {
     height: 1.2,
   );
 
+  static final h3_white = GoogleFonts.plusJakartaSans(
+    fontSize: 16,
+    fontWeight: FontWeight.w600, // SemiBold
+    color: whiteColor,
+    letterSpacing: -0.6,
+    height: 1.4,
+  );
   static final h3 = GoogleFonts.plusJakartaSans(
     fontSize: 16,
     fontWeight: FontWeight.w600, // SemiBold

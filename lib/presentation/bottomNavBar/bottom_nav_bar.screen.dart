@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:frontend/presentation/screens.dart';
 
 import 'package:get/get.dart';
 
@@ -21,9 +22,9 @@ class BottomNavBarScreen extends GetView<BottomNavBarController> {
             index: controller.tabIndex.value,
             children: [
               HomeScreen(),
-              Container(),
-              Container(),
-              Container(),
+              ProjectScreen(),
+              FavoriteScreen(),
+              ProfileScreen(),
             ],
           ),
         ),

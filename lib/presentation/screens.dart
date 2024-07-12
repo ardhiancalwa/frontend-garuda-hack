@@ -1,7 +1,11 @@
 export 'package:frontend/presentation/bottomNavBar/bottom_nav_bar.screen.dart';
+export 'package:frontend/presentation/favorite/favorite.screen.dart';
 export 'package:frontend/presentation/home/home.screen.dart';
+export 'package:frontend/presentation/notification/notification.screen.dart';
+export 'package:frontend/presentation/profile/profile.screen.dart';
 export 'package:frontend/presentation/profilingOne/profiling_one.screen.dart';
 export 'package:frontend/presentation/profilingTwo/profiling_two.screen.dart';
+export 'package:frontend/presentation/project/project.screen.dart';
 export 'package:frontend/presentation/projectDetails/project_details.screen.dart';
 export 'package:frontend/presentation/prosesApply/proses_apply.screen.dart';
 export 'package:frontend/presentation/signin/signin.screen.dart';

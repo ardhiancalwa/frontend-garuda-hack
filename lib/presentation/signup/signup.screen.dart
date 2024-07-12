@@ -88,7 +88,13 @@ class SignupScreen extends GetView<SignupController> {
                     ),
                     PrimaryButton(
                       text: 'Sign Up',
-                      onPressed: () {},
+                      onPressed: () {
+                        if (controller.emailC.text == 'admin@gmail.com' &&
+                            controller.passwordC.text == '123123' &&
+                            controller.fullnameC.text == 'Admin') {
+                          Get.toNamed(Routes.PROFILING_ONE);
+                        }
+                      },
                     ),
                     SizedBox(
                       height: 16,

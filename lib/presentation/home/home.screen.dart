@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:frontend/infrastructure/navigation/routes.dart';
 import 'package:frontend/infrastructure/theme/colors.dart';
 import 'package:frontend/infrastructure/theme/text_component.dart';
 import 'package:frontend/presentation/home/widgets/buttonCategory.dart';
@@ -46,7 +48,9 @@ class HomeScreen extends GetView<HomeController> {
           Padding(
             padding: const EdgeInsets.all(8.0), // Add padding here
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(Routes.NOTIFICATION);
+              },
               icon: SvgPicture.asset('assets/icons/notification.svg'),
             ),
           ),
@@ -60,6 +64,200 @@ class HomeScreen extends GetView<HomeController> {
             children: [
               SizedBox(
                 height: 32,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomText.h2('Progress Project'),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Stack(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        height: 191,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          color: primaryColor,
+                        ),
+                      ),
+                      Positioned.fill(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(16),
+                          child: Image.asset(
+                            'assets/images/pattern_background3.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 12),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset('assets/images/papikos.png'),
+                                    SizedBox(
+                                      width: 6,
+                                    ),
+                                    CustomText.p_white('AI Spaces Company'),
+                                  ],
+                                ),
+                                Container(
+                                  width: 165,
+                                  height: 36,
+                                  decoration: BoxDecoration(
+                                    color: whiteColor.withOpacity(0.1),
+                                    borderRadius: BorderRadius.circular(100),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 5),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Container(
+                                          width: 24,
+                                          height: 24,
+                                          decoration: BoxDecoration(
+                                            color: whiteColor.withOpacity(0.3),
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(3.0),
+                                            child: SvgPicture.asset(
+                                                'assets/icons/percentage.svg'),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 8,
+                                        ),
+                                        CustomText.p_white('40% Has Completed')
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 6,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CustomText.p_white('Beginner Level'),
+                                CustomText.h3_white('UI/UX Designer'),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            CustomText.p_white('Your progress : '),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      height: 10,
+                                      width: 96,
+                                      decoration: BoxDecoration(
+                                        color: secondaryColor,
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 6,
+                                    ),
+                                    Text(
+                                      'CV Screaning',
+                                      style: GoogleFonts.plusJakartaSans(
+                                        fontSize: 10,
+                                        color: secondaryColor,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  width: 6,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      height: 10,
+                                      width: 96,
+                                      decoration: BoxDecoration(
+                                        color: whiteColor.withOpacity(0.2),
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 6,
+                                    ),
+                                    Text(
+                                      'AI Interview',
+                                      style: GoogleFonts.plusJakartaSans(
+                                        fontSize: 10,
+                                        color: whiteColor,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  width: 6,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      height: 10,
+                                      width: 96,
+                                      decoration: BoxDecoration(
+                                        color: whiteColor.withOpacity(0.2),
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 6,
+                                    ),
+                                    Text(
+                                      'Project Simulation',
+                                      style: GoogleFonts.plusJakartaSans(
+                                        fontSize: 10,
+                                        color: whiteColor,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 20,
               ),
               TextField(
                 autocorrect: false,

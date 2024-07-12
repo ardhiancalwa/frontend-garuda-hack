@@ -17,7 +17,9 @@ dependencies:
   file_picker: ^8.0.6
   flutter_pdfview: ^1.0.0+13
   fl_chart: ^0.68.0
+  video_player: ^2.3.0
   share: ^2.0.4
+  chewie: ^1.8.1
 
 dev_dependencies: 
   flutter_lints: ^3.0.0
@@ -29,6 +31,7 @@ flutter:
   assets: 
     - assets/images/
     - assets/icons/
+    - assets/video/
   fonts: 
     - family: Gilroy
       fonts:

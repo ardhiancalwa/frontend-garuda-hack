@@ -83,7 +83,7 @@ class ProfilingOneScreen extends GetView<ProfilingOneController> {
             PrimaryButton(
               text: 'Next',
               onPressed: () {
-                Get.toNamed(Routes.BOTTOM_NAV_BAR);
+                Get.toNamed(Routes.PROFILING_TWO);
               },
             )
           ],

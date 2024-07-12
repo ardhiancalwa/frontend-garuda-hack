@@ -79,7 +79,9 @@ class SigninScreen extends GetView<SigninController> {
                     PrimaryButton(
                       text: 'Sign In',
                       onPressed: () {
-                        Get.toNamed(Routes.PROFILING_ONE);
+                        if(controller.emailC.text == 'admin@gmail.com' && controller.passC.text == '123123') {
+                          Get.toNamed(Routes.PROFILING_ONE);
+                        }
                       },
                     ),
                     SizedBox(

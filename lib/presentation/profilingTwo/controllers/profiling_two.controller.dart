@@ -1,23 +1,34 @@
 import 'package:get/get.dart';
 
 class ProfilingTwoController extends GetxController {
-  //TODO: Implement ProfilingTwoController
+  var isClickedOne = false.obs;
+  var isClickedTwo = false.obs;
+  var isClickedThree = false.obs;
+  var isClickedFour = false.obs;
+  var isClickedFive = false.obs;
+  var isClickedSix = false.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void toggleClickedOne() {
+    isClickedOne.value = !isClickedOne.value;
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void toggleClickedTwo() {
+    isClickedTwo.value = !isClickedTwo.value;
   }
 
-  @override
-  void onClose() {
-    super.onClose();
+  void toggleClickedThree() {
+    isClickedThree.value = !isClickedThree.value;
   }
 
-  void increment() => count.value++;
+  void toggleClickedFour() {
+    isClickedFour.value = !isClickedFour.value;
+  }
+
+  void toggleClickedFive() {
+    isClickedFive.value = !isClickedFive.value;
+  }
+
+  void toggleClickedSix() {
+    isClickedSix.value = !isClickedSix.value;
+  }
 }

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:frontend/infrastructure/theme/colors.dart';
 import 'package:frontend/infrastructure/theme/text_component.dart';
+import 'package:frontend/presentation/prosesApply/widgets/project_simulation/project_result.dart';
 import 'package:frontend/presentation/screens.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/snackbar/snackbar.dart';
@@ -177,7 +178,7 @@ class CaseTwo extends StatelessWidget {
                                 child:
                                     Image.asset('assets/images/upload_cv.png'),
                               ),
-                              CustomText.h2_grey('Upload your CV here'),
+                              CustomText.h2_grey('Upload your project here'),
                             ],
                           ),
                         )
@@ -259,7 +260,7 @@ class CaseTwo extends StatelessWidget {
                                     ),
                                     GestureDetector(
                                       onTap: () {
-                                        controller.setPickedFile(null);
+                                        controller.setPickedFileProject(null);
                                       },
                                       child: SvgPicture.asset(
                                           'assets/icons/trash.svg'),
@@ -294,7 +295,7 @@ class CaseTwo extends StatelessWidget {
                     ),
                     onPressed: () {
                       if (controller.pickedFileProject.value != null) {
-                        Get.to(() => HomeScreen());
+                        Get.to(() => ProjectResult());
                       } else {
                         Get.snackbar(
                           'Error',

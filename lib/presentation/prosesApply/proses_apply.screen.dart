@@ -24,7 +24,7 @@ class ProsesApplyScreen extends GetView<ProsesApplyController> {
       appBar: AppBar(
         backgroundColor: whiteColor,
         surfaceTintColor: whiteColor,
-        title: CustomText.h2('Screening CV'),
+        title: CustomText.h2('Process Simulation'),
         centerTitle: true,
       ),
       body: Obx(
