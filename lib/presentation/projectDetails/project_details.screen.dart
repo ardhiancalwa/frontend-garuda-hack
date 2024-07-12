@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:frontend/infrastructure/navigation/routes.dart';
 import 'package:frontend/infrastructure/theme/colors.dart';
 import 'package:frontend/infrastructure/theme/primary_button.dart';
 import 'package:frontend/infrastructure/theme/text_component.dart';
@@ -163,7 +164,7 @@ class ProjectDetailsScreen extends GetView<ProjectDetailsController> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CustomText.h1('Project Description'),
+                        CustomText.h2('Project Description'),
                         SizedBox(
                           height: 16,
                         ),
@@ -195,7 +196,7 @@ class ProjectDetailsScreen extends GetView<ProjectDetailsController> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CustomText.h1('Skills required'),
+                        CustomText.h2('Skills required'),
                         SizedBox(
                           height: 16,
                         ),
@@ -223,7 +224,7 @@ class ProjectDetailsScreen extends GetView<ProjectDetailsController> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            CustomText.h1('Project Review'),
+                            CustomText.h2('Project Review'),
                             Text(
                               'See all',
                               style: GoogleFonts.dmSans(
@@ -257,7 +258,7 @@ class ProjectDetailsScreen extends GetView<ProjectDetailsController> {
                       children: [
                         Column(
                           children: [
-                            CustomText.h1('Overall Ratings'),
+                            CustomText.h2('Overall Ratings'),
                             SizedBox(
                               height: 19,
                             ),
@@ -379,7 +380,9 @@ class ProjectDetailsScreen extends GetView<ProjectDetailsController> {
                     ),
                     PrimaryButton(
                       text: 'Apply',
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(Routes.PROSES_APPLY);
+                      },
                     )
                   ],
                 ),

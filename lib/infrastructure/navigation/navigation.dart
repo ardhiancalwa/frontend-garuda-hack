@@ -66,5 +66,10 @@ class Nav {
       page: () => const ProjectDetailsScreen(),
       binding: ProjectDetailsControllerBinding(),
     ),
+    GetPage(
+      name: Routes.PROSES_APPLY,
+      page: () => const ProsesApplyScreen(),
+      binding: ProsesApplyControllerBinding(),
+    ),
   ];
 }

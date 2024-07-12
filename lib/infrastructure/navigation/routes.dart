@@ -8,8 +8,9 @@ class Routes {
   static const HOME = '/home';
   static const PROFILING_ONE = '/profiling-one';
   static const PROFILING_TWO = '/profiling-two';
+  static const PROJECT_DETAILS = '/project-details';
   static const SIGNIN = '/signin';
   static const SIGNUP = '/signup';
   static const SPLASHSCREEN = '/splashscreen';
-  static const PROJECT_DETAILS = '/project-details';
+  static const PROSES_APPLY = '/proses-apply';
 }

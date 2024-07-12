@@ -16,6 +16,13 @@ class TextStyles {
     letterSpacing: -0.6,
     height: 1.2,
   );
+  static final h2_grey = GoogleFonts.dmSans(
+    fontSize: 18,
+    fontWeight: FontWeight.w600, // SemiBold
+    color: greyColor,
+    letterSpacing: -0.6,
+    height: 1.2,
+  );
   static final h3_grey = GoogleFonts.dmSans(
     fontSize: 16,
     fontWeight: FontWeight.w500, // SemiBold
