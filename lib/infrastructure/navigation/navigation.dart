@@ -56,5 +56,15 @@ class Nav {
       page: () => const ProfilingTwoScreen(),
       binding: ProfilingTwoControllerBinding(),
     ),
+    GetPage(
+      name: Routes.BOTTOM_NAV_BAR,
+      page: () => const BottomNavBarScreen(),
+      binding: BottomNavBarControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.PROJECT_DETAILS,
+      page: () => const ProjectDetailsScreen(),
+      binding: ProjectDetailsControllerBinding(),
+    ),
   ];
 }

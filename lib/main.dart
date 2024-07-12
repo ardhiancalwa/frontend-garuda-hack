@@ -5,10 +5,15 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'infrastructure/navigation/navigation.dart';
 import 'infrastructure/navigation/routes.dart';
+import 'package:flutter/services.dart';
 
 void main() async {
   var initialRoute = await Routes.initialRoute;
   runApp(Main(initialRoute));
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: Colors.white, // navigation bar color
+    statusBarColor: Colors.white, // status bar color
+  ));
 }
 
 class Main extends StatelessWidget {
