@@ -79,7 +79,6 @@ class SignupScreen extends GetView<SignupController> {
                           controller: controller.passwordC,
                           title: 'Password',
                           hint: 'Enter your password here',
-                          isObsecure: true,
                           keyboard: TextInputType.text,
                         ),
                       ],

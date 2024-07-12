@@ -172,10 +172,10 @@ class ProjectDetailsScreen extends GetView<ProjectDetailsController> {
                           text: TextSpan(
                             text:
                                 'AI Spaces is a Financial Literacy company in the Education sector. This project has been running for approximately 3 months but is still in its infancy. ',
-                            style: GoogleFonts.dmSans(
-                              color: greyColor,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
+                            style: GoogleFonts.plusJakartaSans(
+                              color: textColor,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
                               height: 1.6,
                             ),
                             children: [
@@ -200,20 +200,19 @@ class ProjectDetailsScreen extends GetView<ProjectDetailsController> {
                         SizedBox(
                           height: 16,
                         ),
-                        CustomText.h3_grey('1. General knowledge of UI/UX'),
+                        CustomText.p('1. General knowledge of UI/UX'),
                         SizedBox(
                           height: 8,
                         ),
-                        CustomText.h3_grey(
-                            '2. General knowledge of Design Thinking'),
+                        CustomText.p('2. General knowledge of Design Thinking'),
                         SizedBox(
                           height: 8,
                         ),
-                        CustomText.h3_grey('3. Can design wireframes'),
+                        CustomText.p('3. Can design wireframes'),
                         SizedBox(
                           height: 8,
                         ),
-                        CustomText.h3_grey('4. Can create a style guide'),
+                        CustomText.p('4. Can create a style guide'),
                       ],
                     ),
                     SizedBox(
@@ -236,7 +235,7 @@ class ProjectDetailsScreen extends GetView<ProjectDetailsController> {
                           ],
                         ),
                         SizedBox(
-                          height: 12,
+                          height: 16,
                         ),
                         SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
@@ -362,7 +361,7 @@ class ProjectDetailsScreen extends GetView<ProjectDetailsController> {
                       children: [
                         CustomText.h2('Rating Categories'),
                         SizedBox(
-                          height: 12,
+                          height: 16,
                         ),
                         RatingCategory(
                           title: 'Clarity of purpose',

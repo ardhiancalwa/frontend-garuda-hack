@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/infrastructure/theme/colors.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,8 +12,8 @@ void main() async {
   var initialRoute = await Routes.initialRoute;
   runApp(Main(initialRoute));
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.white, // navigation bar color
-    statusBarColor: Colors.white, // status bar color
+    systemNavigationBarColor: whiteColor, // navigation bar color
+    statusBarColor: whiteColor, // status bar color
   ));
 }
 
@@ -27,7 +28,7 @@ class Main extends StatelessWidget {
       initialRoute: initialRoute,
       getPages: Nav.routes,
       theme: ThemeData(
-        textTheme: GoogleFonts.dmSansTextTheme(
+        textTheme: GoogleFonts.plusJakartaSansTextTheme(
           Theme.of(context).textTheme,
         ),
       ),

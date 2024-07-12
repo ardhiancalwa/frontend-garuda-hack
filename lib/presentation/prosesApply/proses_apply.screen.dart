@@ -1,16 +1,16 @@
 import 'dart:io';
 
 import 'package:easy_stepper/easy_stepper.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:frontend/infrastructure/theme/colors.dart';
-import 'package:frontend/infrastructure/theme/primary_button.dart';
 import 'package:frontend/infrastructure/theme/text_component.dart';
+import 'package:frontend/presentation/prosesApply/widgets/cases/caseOne.dart';
+import 'package:frontend/presentation/prosesApply/widgets/cases/caseZero.dart';
 
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:share/share.dart';
 
 import 'controllers/proses_apply.controller.dart';
 
@@ -37,6 +37,7 @@ class ProsesApplyScreen extends GetView<ProsesApplyController> {
                 unreachedStepBorderColor: whiteColor,
                 activeStepBackgroundColor: primaryColor,
                 finishedStepBackgroundColor: primaryColor,
+                finishedStepIconColor: whiteColor,
                 finishedStepBorderColor: whiteColor,
                 lineStyle: LineStyle(
                   activeLineColor: lightGreyColor,
@@ -45,7 +46,7 @@ class ProsesApplyScreen extends GetView<ProsesApplyController> {
                   unreachedLineColor: lightGreyColor,
                   lineType: LineType.dashed,
                   lineSpace: 5,
-                  lineLength: 50,
+                  lineLength: 75,
                 ),
                 steps: [
                   EasyStep(
@@ -56,7 +57,7 @@ class ProsesApplyScreen extends GetView<ProsesApplyController> {
                   ),
                   EasyStep(
                     customStep: _buildStepIcon(
-                        'assets/icons/ai_active.svg', activeStep >= 1),
+                        'assets/icons/ai_new2.svg', activeStep >= 1),
                     customTitle: _buildStepTitle('Interview', activeStep >= 1),
                   ),
                   EasyStep(
@@ -82,13 +83,13 @@ class ProsesApplyScreen extends GetView<ProsesApplyController> {
       height: 50,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: isActive ? primaryColor : lightGreyColor,
+        color: isActive ? primaryColor : backgroundBorder,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(10.0),
         child: SvgPicture.asset(
           isActive ? assetPath : assetPath,
-          color: Colors.white,
+          color: Color(0xffBEBEBE),
         ),
       ),
     );
@@ -105,100 +106,9 @@ class ProsesApplyScreen extends GetView<ProsesApplyController> {
   Widget getStepContent(int step) {
     switch (step) {
       case 0:
-        return Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Obx(() {
-                final file = controller.pickedFile.value;
-                return file == null
-                    ? Container(
-                        width: double.infinity,
-                        height: 244,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: greyColor,
-                            width: 1,
-                          ),
-                          borderRadius: BorderRadius.circular(12),
-                          color: whiteColor,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            GestureDetector(
-                              onTap: () async {
-                                final result =
-                                    await FilePicker.platform.pickFiles(
-                                  type: FileType.custom,
-                                  allowedExtensions: ['pdf'],
-                                );
-                                if (result == null) {
-                                  return;
-                                }
-                                // open file
-                                final file = File(result.files.single.path!);
-                                controller.setPickedFile(file);
-                              },
-                              child: Image.asset('assets/images/upload_cv.png'),
-                            ),
-                            CustomText.h2_grey('Upload your CV here'),
-                          ],
-                        ),
-                      )
-                    : ElevatedButton(
-                        onPressed: () {
-                          if (controller.pickedFile.value != null) {
-                            Get.to(() => PDFViewPage(
-                                file: controller.pickedFile.value!));
-                          } else {
-                            Get.snackbar(
-                              'Error',
-                              'Please select a CV first',
-                              snackPosition: SnackPosition.BOTTOM,
-                            );
-                          }
-                        },
-                        child: Column(
-                          children: [
-                            Text('Lihat CV'),
-                            SizedBox(height: 8),
-                            Text(
-                                'Size: ${(file.lengthSync() / 1024).toStringAsFixed(2)} KB'),
-                          ],
-                        ),
-                      );
-              }),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  if (controller.pickedFile.value != null) {
-                    controller.activeStep++;
-                  } else {
-                    Get.snackbar(
-                      'Error',
-                      'Please select a CV first',
-                      snackPosition: SnackPosition.BOTTOM,
-                    );
-                  }
-                },
-                child: Text('Next'),
-              ),
-            ],
-          ),
-        );
+        return CaseZero(controller: controller);
       case 1:
-        return Column(
-          children: [
-            Text('AI Interview'),
-            ElevatedButton(
-              onPressed: () {
-                controller.activeStep++;
-              },
-              child: Text('Next'),
-            ),
-          ],
-        );
+        return CaseOne(controller: controller);
       case 2:
         return Column(
           children: [
@@ -227,9 +137,25 @@ class PDFViewPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: whiteColor,
       appBar: AppBar(
+        elevation: 0,
         surfaceTintColor: whiteColor,
         backgroundColor: whiteColor,
-        title: Text('PDF Viewer'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () {
+            Get.back();
+          },
+        ),
+        title: CustomText.h2('PDF Viewer'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.share, color: Colors.black),
+            onPressed: () {
+              Share.shareFiles([file.path], text: 'Check out this PDF!');
+            },
+          ),
+        ],
       ),
       body: PDFView(
         filePath: file.path,

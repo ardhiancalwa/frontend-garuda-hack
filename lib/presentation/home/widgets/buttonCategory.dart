@@ -17,7 +17,7 @@ class ButtonCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 8),
+      padding: const EdgeInsets.only(right: 12),
       child: Container(
         width: 135,
         height: 40,
@@ -25,23 +25,19 @@ class ButtonCategory extends StatelessWidget {
           color: whiteColor,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: lightGreyColor,
+            color: Color(0xffE5E5E5),
             width: 1,
           ),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            SvgPicture.asset('assets/icons/$icon.svg'),
-            Text(
-              title,
-              style: GoogleFonts.dmSans(
-                color: greyColor,
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-              ),
+        child: Center(
+          child: Text(
+            title,
+            style: GoogleFonts.dmSans(
+              color: greyColor,
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
             ),
-          ],
+          ),
         ),
       ),
     );

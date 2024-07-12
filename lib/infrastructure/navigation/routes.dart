@@ -1,7 +1,7 @@
 class Routes {
   static Future<String> get initialRoute async {
     // TODO: implement method
-    return SPLASHSCREEN;
+    return BOTTOM_NAV_BAR;
   }
 
   static const BOTTOM_NAV_BAR = '/bottom-nav-bar';

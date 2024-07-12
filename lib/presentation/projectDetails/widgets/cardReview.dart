@@ -18,7 +18,7 @@ class CardReview extends StatelessWidget {
         width: 300,
         decoration: BoxDecoration(
           border: Border.all(
-            color: lightGreyColor,
+            color: borderColor,
             width: 1,
           ),
           borderRadius: BorderRadius.circular(12),
@@ -26,8 +26,8 @@ class CardReview extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 12,
-            vertical: 10,
+            horizontal: 16,
+            vertical: 12,
           ),
           child: Column(
             children: [
@@ -62,14 +62,8 @@ class CardReview extends StatelessWidget {
               SizedBox(
                 height: 9,
               ),
-              Text(
-                'By working on this project, I know how to solve real-world case studies according to customer requests.',
-                style: GoogleFonts.dmSans(
-                  color: greyColor,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
-              )
+              CustomText.p(
+                  'By working on this project, I know how to solve real-world case studies according to customer requests.'),
             ],
           ),
         ),

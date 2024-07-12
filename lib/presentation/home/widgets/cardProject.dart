@@ -27,7 +27,7 @@ class CardProject extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 10),
+      padding: const EdgeInsets.only(right: 12),
       child: GestureDetector(
         onTap: () {
           Get.toNamed(Routes.PROJECT_DETAILS);
@@ -37,7 +37,7 @@ class CardProject extends StatelessWidget {
           width: 245,
           decoration: BoxDecoration(
             border: Border.all(
-              color: lightGreyColor,
+              color: Color(0xffE5E5E5),
               width: 1,
             ),
             borderRadius: BorderRadius.circular(12),
@@ -45,8 +45,8 @@ class CardProject extends StatelessWidget {
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 12,
-              vertical: 10,
+              horizontal: 16,
+              vertical: 12,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,9 +69,10 @@ class CardProject extends StatelessWidget {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: whiteColor,
+                            elevation: 0,
                             shape: CircleBorder(
                               side: BorderSide(
-                                color: lightGreyColor,
+                                color: Color(0xffE5E5E5),
                                 width: 1,
                               ),
                             ),
@@ -115,7 +116,7 @@ class CardProject extends StatelessWidget {
                             shape: BoxShape.circle,
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(5.0),
+                            padding: const EdgeInsets.all(6.0),
                             child: SvgPicture.asset(
                               'assets/icons/user.svg',
                             ),
@@ -137,7 +138,7 @@ class CardProject extends StatelessWidget {
                             shape: BoxShape.circle,
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(2.0),
+                            padding: const EdgeInsets.all(4.0),
                             child: SvgPicture.asset(
                               'assets/icons/ticket.svg',
                             ),

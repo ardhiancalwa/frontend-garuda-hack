@@ -25,7 +25,7 @@ class HomeScreen extends GetView<HomeController> {
           padding: const EdgeInsets.all(8.0), // Add padding here
           child: CircleAvatar(
             radius: 20,
-            backgroundImage: AssetImage('assets/images/photo_profile.png'),
+            backgroundImage: AssetImage('assets/images/pp_home.png'),
           ),
         ),
         title: Column(
@@ -72,19 +72,19 @@ class HomeScreen extends GetView<HomeController> {
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                     borderSide: BorderSide(
-                      color: lightGreyColor,
+                      color: Color(0xffE5E5E5),
                       width: 1,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                     borderSide: BorderSide(
-                      color: lightGreyColor,
+                      color: Color(0xffE5E5E5),
                       width: 1,
                     ),
                   ),
                   hintText: 'Search Projects',
-                  hintStyle: GoogleFonts.dmSans(
+                  hintStyle: GoogleFonts.plusJakartaSans(
                     color: lightGreyColor,
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
@@ -102,7 +102,7 @@ class HomeScreen extends GetView<HomeController> {
                       width: 47,
                       height: 40,
                       decoration: BoxDecoration(
-                        color: primaryColor.withOpacity(0.1),
+                        color: primaryColor.withOpacity(0.05),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
                           color: primaryColor,
@@ -121,7 +121,7 @@ class HomeScreen extends GetView<HomeController> {
                       ),
                     ),
                     SizedBox(
-                      width: 8,
+                      width: 12,
                     ),
                     ButtonCategory(
                       title: 'UI/UX Designer',
@@ -143,14 +143,14 @@ class HomeScreen extends GetView<HomeController> {
                 ),
               ),
               SizedBox(
-                height: 21,
+                height: 26,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomText.h1('Project by Your Profile'),
                   SizedBox(
-                    height: 16,
+                    height: 20,
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
@@ -201,7 +201,7 @@ class HomeScreen extends GetView<HomeController> {
                 children: [
                   CustomText.h1('Most Applied Projects'),
                   SizedBox(
-                    height: 16,
+                    height: 20,
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
@@ -252,7 +252,7 @@ class HomeScreen extends GetView<HomeController> {
                 children: [
                   CustomText.h1('Top Rated Projects'),
                   SizedBox(
-                    height: 16,
+                    height: 20,
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,

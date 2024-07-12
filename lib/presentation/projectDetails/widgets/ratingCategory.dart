@@ -10,32 +10,37 @@ class RatingCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.only(bottom: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          CustomText.h4_grey(title),
+          CustomText.p(title),
           Row(
             children: [
               Icon(
                 Icons.star,
                 color: secondaryColor,
+                size: 20,
               ),
               Icon(
                 Icons.star,
                 color: secondaryColor,
+                size: 20,
               ),
               Icon(
                 Icons.star,
                 color: secondaryColor,
+                size: 20,
               ),
               Icon(
                 Icons.star,
                 color: secondaryColor,
+                size: 20,
               ),
               Icon(
                 Icons.star,
                 color: secondaryColor,
+                size: 20,
               ),
             ],
           ),
