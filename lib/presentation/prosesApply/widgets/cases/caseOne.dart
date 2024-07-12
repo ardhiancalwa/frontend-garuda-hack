@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../controllers/proses_apply.controller.dart';
-import '../interviewSession.dart';
+import '../ai_interview/interviewSession.dart';
 
 class CaseOne extends StatelessWidget {
   const CaseOne({

@@ -211,7 +211,9 @@ class CaseZero extends StatelessWidget {
                     style: GoogleFonts.dmSans(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xffD0CDCD),
+                      color: controller.pickedFile.value == null
+                          ? Color(0xffD0CDCD)
+                          : whiteColor,
                       letterSpacing: 0.6,
                       height: 1,
                     ),

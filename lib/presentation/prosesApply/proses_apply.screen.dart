@@ -7,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:frontend/infrastructure/theme/colors.dart';
 import 'package:frontend/infrastructure/theme/text_component.dart';
 import 'package:frontend/presentation/prosesApply/widgets/cases/caseOne.dart';
+import 'package:frontend/presentation/prosesApply/widgets/cases/caseTwo.dart';
 import 'package:frontend/presentation/prosesApply/widgets/cases/caseZero.dart';
 
 import 'package:get/get.dart';
@@ -34,11 +35,11 @@ class ProsesApplyScreen extends GetView<ProsesApplyController> {
               EasyStepper(
                 activeStep: activeStep,
                 activeStepBorderColor: whiteColor,
-                unreachedStepBorderColor: whiteColor,
                 activeStepBackgroundColor: primaryColor,
-                finishedStepBackgroundColor: primaryColor,
+                finishedStepBackgroundColor: whiteColor,
                 finishedStepIconColor: whiteColor,
                 finishedStepBorderColor: whiteColor,
+                unreachedStepBorderColor: whiteColor,
                 lineStyle: LineStyle(
                   activeLineColor: lightGreyColor,
                   finishedLineColor: lightGreyColor,
@@ -89,7 +90,7 @@ class ProsesApplyScreen extends GetView<ProsesApplyController> {
         padding: const EdgeInsets.all(10.0),
         child: SvgPicture.asset(
           isActive ? assetPath : assetPath,
-          color: Color(0xffBEBEBE),
+          color: isActive ? whiteColor : Color(0xffBEBeBe),
         ),
       ),
     );
@@ -110,17 +111,7 @@ class ProsesApplyScreen extends GetView<ProsesApplyController> {
       case 1:
         return CaseOne(controller: controller);
       case 2:
-        return Column(
-          children: [
-            Text('Project Simulation'),
-            ElevatedButton(
-              onPressed: () {
-                controller.activeStep++;
-              },
-              child: Text('Next'),
-            ),
-          ],
-        );
+        return CaseTwo(controller: controller);
       default:
         return Center(child: Text('Unknown Step'));
     }

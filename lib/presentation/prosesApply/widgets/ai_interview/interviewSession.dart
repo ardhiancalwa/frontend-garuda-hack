@@ -8,7 +8,7 @@ import 'package:frontend/presentation/prosesApply/widgets/ai_interview/chatUser.
 import 'package:frontend/presentation/prosesApply/widgets/interviewResult.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../controllers/speech_controller.dart';
+import '../../controllers/speech_controller.dart';
 
 class InterviewSession extends StatelessWidget {
   const InterviewSession({super.key});

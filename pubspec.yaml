@@ -16,6 +16,7 @@ dependencies:
   open_file: ^3.3.2
   file_picker: ^8.0.6
   flutter_pdfview: ^1.0.0+13
+  fl_chart: ^0.68.0
   share: ^2.0.4
 
 dev_dependencies: 
